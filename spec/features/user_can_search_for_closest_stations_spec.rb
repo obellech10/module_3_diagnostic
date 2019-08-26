@@ -8,7 +8,8 @@ RSpec.describe 'As a user' do
       visit '/'
 
       # And I fill in the search form with 80203 (Note: Use the existing search form)
-      fill_in "Search by zip...", with: 80203
+      # fill_in "Search by zip...", with: 80203
+      fill_in "q", with: 80203
       # And I click "Locate"
       click_button 'Locate'
 
@@ -28,7 +29,7 @@ RSpec.describe 'As a user' do
         expect(page).to have_css('.accesstimes')
       end
       # And the stations should be limited to Electric and Propane
-      
+
     end
   end
 end
