@@ -1,0 +1,15 @@
+<h1>Alt Fuel Finder</h1>
+
+<h2>Stations</h2>
+
+<section>
+  <% facade.stations.each do |station| %>
+  <ul class="station">
+    <li class="name"><%= station.station_name %></li>
+    <li class="address"><%= station.street_address %></li>
+    <li class="fueltypes"><%= station.fuel_type_code %></li>
+    <li class="distance"><%= station.distance %></li>
+    <li class="accesstimes"><%= station.access_days_time %></li>
+  </ul>
+  <% end %>
+</section>
