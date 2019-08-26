@@ -1,7 +1,7 @@
 class AltFuelStationsFacade
   def initialize(postal_code)
     @postal_code = postal_code
-    @service = AltFuelService.new
+    @service = AltFuelServices.new
   end
 
   def stations

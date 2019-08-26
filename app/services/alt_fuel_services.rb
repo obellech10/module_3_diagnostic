@@ -1,7 +1,7 @@
-class AltFuelService
+class AltFuelServices
   def alt_fuel_stations(postal_code)
-    binding.pry
-    get_json()
+    key = ENV['ALT_FUEL_API_KEY']
+    get_json('/docs/transportation/alt-fuel-stations-v1/nearest.json?api_key=key&location=postal_code&fuel_type=ELEC,LPG&limit=10')
   end
 
 
@@ -13,7 +13,7 @@ private
   end
 
   def conn
-    Faraday.new(url: 'https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/nearest.json') do |faraday|
+    Faraday.new(url: 'https://developer.nrel.gov') do |faraday|
       faraday.headers["api_key"] = ENV['ALT_FUEL_API_KEY']
       faraday.adapter Faraday.default_adapter
     end
